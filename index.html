@@ -66,7 +66,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-9">
             <h2>Muhammad Bilal Butt</h2>
-            <p>I'm <span class="typed" data-typed-items="Data Scientist, Machine Learning , Python , Deep Learning ">Data Scientist</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            <p>I'm <span class="typed" data-typed-items="Data Scientist, Machine Learning Engineer , Python developer , Deep Learning Engineer">Data Scientist</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
             <div class="social-links">
               <a href="#"><i class="bi bi-twitter-x"></i></a>
               <a href="#"><i class="bi bi-facebook"></i></a>
@@ -286,7 +286,6 @@
     </section>
     <!-- /Resume Section -->
 
-    <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section">
 
       <!-- Section Title -->
@@ -303,11 +302,12 @@
             <li data-filter="*" class="filter-active">All</li>
             <li data-filter=".filter-ml">Machine Learning</li>
             <li data-filter=".filter-data-viz">Data Visualization</li>
-            <li data-filter=".filter-web-dev">Data Analysis</li>
+            <li data-filter=".filter-data-analysis">Data Analysis</li>
           </ul><!-- End Portfolio Filters -->
     
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
     
+            <!-- Machine Learning Portfolio Item -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ml">
               <img src="assets/img/portfolio/ml-project-1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -318,6 +318,7 @@
               </div>
             </div><!-- End Portfolio Item -->
     
+            <!-- Data Visualization Portfolio Item -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-data-viz">
               <img src="assets/img/portfolio/data-viz-project-1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -328,71 +329,25 @@
               </div>
             </div><!-- End Portfolio Item -->
     
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web-dev">
-              <img src="assets/img/portfolio/web-dev-project-1.jpg" class="img-fluid" alt="">
+            <!-- Data Analysis Portfolio Item -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-data-analysis">
+              <img src="assets/img/portfolio/data-analysis-project-1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Personal Portfolio Website</h4>
                 <p>Responsive website built to showcase my data science projects and skills.</p>
-                <a href="assets/img/portfolio/web-dev-project-1.jpg" title="Personal Portfolio Website" data-gallery="portfolio-gallery-web-dev" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/portfolio/data-analysis-project-1.jpg" title="Personal Portfolio Website" data-gallery="portfolio-gallery-data-analysis" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
     
-            <!-- Additional portfolio items can be added here -->
-    
-          </div>
-    
-        </div>
-    
-      </div>
-    
-    </section>
-    <!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Machine Learning</h4>
-                
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="Machine Learning" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            
-
-            
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Data Analysis</h4>
-                
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Data Visualization</h4>
-                
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            
-
           </div><!-- End Portfolio Container -->
-
+    
         </div>
-
+    
       </div>
-
-    </section><!-- /Portfolio Section -->
-
+    
+    </section><!-- End Portfolio Section -->
+    
     <!-- Services Section -->
     <section id="services" class="services section">
 
@@ -750,6 +705,28 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <!-- Isotope JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Initialize Isotope
+    var $grid = $('.isotope-container').isotope({
+      itemSelector: '.portfolio-item',
+      layoutMode: 'fitRows'
+    });
+  
+    // Filter items on button click
+    $('.portfolio-filters').on('click', 'li', function() {
+      var filterValue = $(this).attr('data-filter');
+      $grid.isotope({ filter: filterValue });
+      // Add active class to the clicked filter button
+      $('.portfolio-filters li').removeClass('filter-active');
+      $(this).addClass('filter-active');
+    });
+  });
+  </script>
+  
 
 </body>
 
